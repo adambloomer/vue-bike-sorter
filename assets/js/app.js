@@ -2,7 +2,7 @@ new Vue({
   el: '#app',
   data () {
     return {
-      featureFilters: [],
+      featureFilters: '26in wheels',
       // the bikes data would most likely come from a JSON object from a REST api
       // however I'm declaring here for the purposes of this test project
       bikes: [
@@ -45,7 +45,7 @@ new Vue({
           name: 'Specialized Demo',
           imageLink: 'specialized-demo.jpg',
           description: 'Combing the World Cup proven Demo 8 design with an affordable M5 aluminium frame the Demo 8 Alloy is Downhill MTB that is designed to win races without breaking the bank.',
-          features: ['26in_wheels', 'Aluminium frame', 'Downhill'],
+          features: ['26in wheels', 'Aluminium frame', 'Downhill'],
           rating: 1
         }
       ]
@@ -57,6 +57,14 @@ new Vue({
       // if no filters, return all data
       if (!this.featureFilters.length) {
         bikeResults = this.bikes;
+      } else {
+        console.log(this.featureFilters);
+        // loop through bikes object and return any bikes that match the selected filters
+        this.bikes.filter(bike => {
+          if (bike.features.indexOf(this.featureFilters) > -1) {
+              bikeResults.push(bike);
+          }
+        })
       }
       // return the sorted/filtered data to the function
       return bikeResults;
