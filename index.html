@@ -11,6 +11,58 @@
     <header class="app-header content">
       <h1>Bike search results</h1>
     </header>
+    <section class="filters">
+      <h2>Filters</h2>
+      <div class="form">
+        <div class="field">
+          <h3>Wheel size</h3>
+          <p class="control">
+            <label class="checkbox">
+              <input type="checkbox">
+              26in Wheels
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              650b Wheels
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              29in Wheels
+            </label>
+          </p>
+          <h3>Frame material</h3>
+          <p class="control">
+            <label class="checkbox">
+              <input type="checkbox">
+              Carbon Frame
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              Aluminium Frame
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              Steel Frame
+            </label>
+          </p>
+          <h3>Bike type</h3>
+          <p class="control">
+            <label class="checkbox">
+              <input type="checkbox">
+              All Mountain
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              Downhill
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              Hardtail
+            </label>
+          </p>
+        </div>
+      </div>
+    </section>
     <section class="card" v-for="bike in bikes">
       <div class="card-image">
         <figure class="image is-4by3">
