@@ -8,28 +8,30 @@
 </head>
 <body>
   <div id="app">
-    <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
-    <h1>{{ greeting }}</h1>
-    <ul>
-      <li>
-        To learn more about Vue, visit
-        <a :href="docsURL" target="_blank">
-          {{ humanizeURL(docsURL) }}
-        </a>
-      </li>
-      <li>
-        For live help with simple questions, check out
-        <a :href="gitterURL" target="_blank">
-          the Gitter chat
-        </a>
-      </li>
-      <li>
-        For more complex questions, post to
-        <a :href="forumURL" target="_blank">
-          the forum
-        </a>
-      </li>
-    </ul>
+    <section class="card" v-for="bike in bikes">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img :src="'assets/img/bikes/' + bike.imageLink" width="100%" height="auto" alt="Image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{{ bike.name }}</p>
+          </div>
+        </div>
+        <div class="content">
+          <p>{{ bike.description }}</p>
+          <p><strong>Bike rating:</strong> <small>{{ bike.rating }}*</small></p>
+          <p>
+            <strong>Features:</strong>
+            <small v-for="feature in bike.features">
+                {{ feature }} |
+            </small>
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script>
