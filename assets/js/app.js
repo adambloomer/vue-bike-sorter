@@ -55,6 +55,7 @@ new Vue({
   computed: {
     filteredBikes () {
       let bikeResults = [];
+      const sortDirection = this.sortByRating;
       // if no filters, return all data
       if (!this.featureFilters.length) {
         bikeResults = this.bikes;
@@ -71,14 +72,14 @@ new Vue({
         })
       }
       // handle sorting if selected
-      if (this.sortByRating === 'asc') {
+      if (sortDirection !== 'null') {
         bikeResults.sort(function (a, b) {
-          return a.rating - b.rating;
-        });
-      }
-      if (this.sortByRating === 'desc') {
-        bikeResults.sort(function (a, b) {
-          return b.rating - a.rating;
+          if (sortDirection === 'asc') {
+            return a.rating - b.rating;
+          }
+          if (sortDirection === 'desc') {
+            return b.rating - a.rating;
+          }
         });
       }
       // return the sorted/filtered data to the function
