@@ -2,7 +2,11 @@ new Vue({
   el: '#app',
   data () {
     return {
-      featureFilters: [],
+      allFilters: {
+          wheelSize: '',
+          frameMaterial: '',
+          bikeType: ''
+        },
       sortByRating: 'null',
       // the bikes data would most likely come from a JSON object from a REST api
       // however I'm declaring here for the purposes of this test project
@@ -52,7 +56,23 @@ new Vue({
       ]
     }
   },
+  methods: {
+    addFilter: function(event) {
+      const filterName = event.srcElement.name;
+      const filterValue = event.srcElement.value;
+      this.allFilters[filterName] = filterValue;
+    }
+  },
   computed: {
+    featureFilters () {
+        let selectedFilters =  [];
+        for (var i in this.allFilters) {
+          if(this.allFilters[i] !== '') {
+            selectedFilters.push(this.allFilters[i]);
+          }
+        }
+        return selectedFilters;
+    },
     filteredBikes () {
       let bikeResults = [];
       const sortDirection = this.sortByRating;
