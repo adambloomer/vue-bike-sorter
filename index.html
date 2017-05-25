@@ -101,6 +101,11 @@
         </div>
       </div>
     </section>
+    <section class="no-results" v-if="!filteredBikes.length">
+      <div class="notification is-danger">
+        Sorry no results match your criteria. Try adjusting your filter selections.
+      </div>
+    </section>
   </div>
   <script src="assets/js/app.js"></script>
 </body>

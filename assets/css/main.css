@@ -20,12 +20,12 @@ body {
   margin-bottom: 10px!important;
 }
 
-.app-header, .filters, .sort {
+.app-header, .filters, .sort, .no-results {
   max-width: 500px;
   margin: 0 auto;
 }
 
-.sort {
+.sort, .no-results {
   margin-top: 20px;
 }
 .card {
