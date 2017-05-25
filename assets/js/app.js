@@ -2,7 +2,7 @@ new Vue({
   el: '#app',
   data () {
     return {
-      featureFilters: '26in wheels',
+      featureFilters: ['26in wheels', 'Steel frame'],
       // the bikes data would most likely come from a JSON object from a REST api
       // however I'm declaring here for the purposes of this test project
       bikes: [
@@ -58,11 +58,12 @@ new Vue({
       if (!this.featureFilters.length) {
         bikeResults = this.bikes;
       } else {
-        console.log(this.featureFilters);
         // loop through bikes object and return any bikes that match the selected filters
         this.bikes.filter(bike => {
-          if (bike.features.indexOf(this.featureFilters) > -1) {
-              bikeResults.push(bike);
+          for (var i in this.featureFilters) {
+            if (bike.features.indexOf(this.featureFilters[i]) > -1) {
+                bikeResults.push(bike);
+            }
           }
         })
       }
