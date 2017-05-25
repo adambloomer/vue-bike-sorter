@@ -62,12 +62,15 @@ new Vue({
       } else {
         // loop through bikes object and return any bikes that match the selected filters
         this.bikes.filter(bike => {
-          let addedToResults = false;
+          const totalFeatures = this.featureFilters.length;
+          let matchedFeatures = 0;
           for (var i in this.featureFilters) {
-            if (bike.features.indexOf(this.featureFilters[i]) > -1 && addedToResults === false) {
-                bikeResults.push(bike);
-                addedToResults = true;
+            if (bike.features.indexOf(this.featureFilters[i]) > -1) {
+                matchedFeatures++;
             }
+          }
+          if (totalFeatures === matchedFeatures) {
+            bikeResults.push(bike);
           }
         })
       }
