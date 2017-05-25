@@ -76,6 +76,11 @@ new Vue({
           return a.rating - b.rating;
         });
       }
+      if (this.sortByRating === 'desc') {
+        bikeResults.sort(function (a, b) {
+          return b.rating - a.rating;
+        });
+      }
       // return the sorted/filtered data to the function
       return bikeResults;
     }
