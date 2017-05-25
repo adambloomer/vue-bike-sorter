@@ -1,6 +1,7 @@
 new Vue({
   el: '#app',
   data: {
+    featureFilters: [],
     // the bikes data would most likely come from a JSON object from a REST api
     // however I'm declaring here for the purposes of this test project
     bikes: [
@@ -47,5 +48,16 @@ new Vue({
         rating: 1
       }
     ]
+  },
+  computed: {
+    filteredBikes () {
+      let bikeResults = [];
+      // if no filters, return all data
+      if (!this.featureFilters.length) {
+        bikeResults = this.bikes
+      }
+      // return the sorted/filtered data to the function
+      return bikeResults
+    }
   }
 })

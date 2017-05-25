@@ -63,7 +63,7 @@
         </div>
       </div>
     </section>
-    <section class="card" v-for="bike in bikes">
+    <section class="card" v-for="bike in filteredBikes">
       <div class="card-image">
         <figure class="image is-4by3">
           <img :src="'assets/img/bikes/' + bike.imageLink" width="100%" height="auto" alt="Image">
