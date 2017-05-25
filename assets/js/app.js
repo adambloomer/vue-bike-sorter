@@ -70,6 +70,12 @@ new Vue({
           }
         })
       }
+      // handle sorting if selected
+      if (this.sortByRating === 'asc') {
+        bikeResults.sort(function (a, b) {
+          return a.rating - b.rating;
+        });
+      }
       // return the sorted/filtered data to the function
       return bikeResults;
     }
