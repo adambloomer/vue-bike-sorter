@@ -92,7 +92,7 @@ new Vue({
           if (totalFeatures === matchedFeatures) {
             bikeResults.push(bike);
           }
-        })
+        });
       }
       // handle sorting if selected
       if (sortDirection !== 'null') {
@@ -109,4 +109,4 @@ new Vue({
       return bikeResults;
     }
   }
-})
+});
