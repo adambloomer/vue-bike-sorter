@@ -1,0 +1,43 @@
+html {
+  height: 100%;
+}
+body {
+  background: url('../img/global/mountain-range.jpg') fixed bottom center;
+  min-height: 100%;
+}
+
+#app {
+  background: rgba(260,260,260,0.8);
+  position: relative;
+  width: 70%;
+  padding: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+.content h3 {
+  margin-top: 0!important;
+  margin-bottom: 10px!important;
+}
+
+.app-header, .filters, .sort {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.sort {
+  margin-top: 20px;
+}
+.card {
+  background: white;
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+img {
+  height: auto!important;
+}
+
+.image.is-4by3 {
+    padding-top: 62%;
+}
