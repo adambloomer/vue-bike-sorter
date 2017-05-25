@@ -3,7 +3,7 @@ new Vue({
   data () {
     return {
       featureFilters: [],
-      sortByRating: 'asc',
+      sortByRating: '',
       // the bikes data would most likely come from a JSON object from a REST api
       // however I'm declaring here for the purposes of this test project
       bikes: [
