@@ -54,10 +54,10 @@ new Vue({
       let bikeResults = [];
       // if no filters, return all data
       if (!this.featureFilters.length) {
-        bikeResults = this.bikes
+        bikeResults = this.bikes;
       }
       // return the sorted/filtered data to the function
-      return bikeResults
+      return bikeResults;
     }
   }
 })
