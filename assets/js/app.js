@@ -61,6 +61,15 @@ new Vue({
       const filterName = event.srcElement.name;
       const filterValue = event.srcElement.value;
       this.allFilters[filterName] = filterValue;
+    },
+    resetFilters() {
+      for (var i in this.allFilters) {
+        this.allFilters[i] = '';
+      }
+      const radioBtns = document.querySelectorAll('.filterRadioBtn');
+      for (var i = 0; i < radioBtns.length; i++) {
+        radioBtns[i].checked = false;
+      }
     }
   },
   computed: {

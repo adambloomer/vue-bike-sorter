@@ -28,6 +28,10 @@ body {
 .sort, .no-results {
   margin-top: 20px;
 }
+.reset-filters {
+  margin-top: 10px;
+}
+
 .card {
   background: white;
   max-width: 500px;

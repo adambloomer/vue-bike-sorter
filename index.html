@@ -18,50 +18,51 @@
           <h3>Wheel size</h3>
           <p class="control">
             <label class="radio">
-              <input type="radio" name="wheelSize" value="26in wheels" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="wheelSize" value="26in wheels" @change="addFilter">
               26in wheels
             </label>
             <label class="radio">
-              <input type="radio" name="wheelSize" value="650b wheels" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="wheelSize" value="650b wheels" @change="addFilter">
               650b wheels
             </label>
             <label class="radio">
-              <input type="radio" name="wheelSize" value="29in wheels" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="wheelSize" value="29in wheels" @change="addFilter">
               29in wheels
             </label>
           </p>
           <h3>Frame material</h3>
           <p class="control">
             <label class="radio">
-              <input type="radio" name="frameMaterial" value="Carbon frame" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="frameMaterial" value="Carbon frame" @change="addFilter">
               Carbon Frame
             </label>
             <label class="radio">
-              <input type="radio" name="frameMaterial" value="Aluminium frame" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="frameMaterial" value="Aluminium frame" @change="addFilter">
               Aluminium Frame
             </label>
             <label class="radio">
-              <input type="radio" name="frameMaterial" value="Steel frame" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="frameMaterial" value="Steel frame" @change="addFilter">
               Steel Frame
             </label>
           </p>
           <h3>Bike type</h3>
           <p class="control">
             <label class="radio">
-              <input type="radio" name="bikeType" value="All mountain" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="bikeType" value="All mountain" @change="addFilter">
               All Mountain
             </label>
             <label class="radio">
-              <input type="radio" name="bikeType" value="Downhill" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="bikeType" value="Downhill" @change="addFilter">
               Downhill
             </label>
             <label class="radio">
-              <input type="radio" name="bikeType" value="Hardtail" @change="addFilter">
+              <input type="radio" class="filterRadioBtn" name="bikeType" value="Hardtail" @change="addFilter">
               Hardtail
             </label>
           </p>
         </div>
       </div>
+    <a class="button is-small reset-filters" @click="resetFilters">Reset all filters</a>
     </section>
     <section class="sort">
       <div class="field">
@@ -103,7 +104,7 @@
     </section>
     <section class="no-results" v-if="!filteredBikes.length">
       <div class="notification is-danger">
-        Sorry no results match your criteria. Try adjusting your filter selections.
+        Sorry no results match your criteria. Try adjusting your filter selections or <a @click="resetFilters">reset the filters</a>.
       </div>
     </section>
   </div>
