@@ -4,4 +4,4 @@
 
 To run the app, clone the repo then open the index.html file in your browser. simple!
 
-Alternatively, you can view the example here: https://bike-filter-ungkmnnycw.now.sh/
+Alternatively, you can view the example right here on github: https://adambloomer.github.io/vue-bike-sorter/
